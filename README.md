@@ -1,6 +1,4 @@
-# Culture Amp
-
-
+# Clickstream Data Pipeline
 
 ## Problem Statement
 
@@ -31,12 +29,26 @@ The data is a CSV containing individual page views on our various websites. The 
 
 ### Clickstream parquet
 
-Clickstream csv data is cleaned and stored in parquet format. See [etl.py](src/scripts/etl.py) It is partitioned by year and month.
+Clickstream csv data is cleaned and stored in parquet format. See [etl.py](src/scripts/etl.py). It is partitioned by year and month.
 
 ## Instructions for running locally
 
 #### Install Requirements
+
+Clone repository to local machine
 ```
+git clone https://github.com/spiyer99/clickstream-data-pipeline.git
+```
+
+#### Change directory to local repository
+```
+cd clickstream-data-pipeline
+```
+
+#### Create python virtual environment
+```
+python3 -m venv venv             # create virtualenv
+source venv/bin/activate         # activate virtualenv
 pip install -r requirements.txt  # install requirements
 ```
 
