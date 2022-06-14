@@ -9,7 +9,7 @@ from etl import create_spark_session
 
 # TODO: change batch size to 1000 records
 def batch_function(df, batch_id):
-	min_date, max_date = df.select(min("datetime"), max("datetime")).first()
+	min_date, max_date = df.select(F.min("datetime"), F.max("datetime")).first()
 	n_unique = df.select('anonymous_user_id').distinct().count()
 	return {'min_date': min_date,\
 			'max_date': max_date,\
